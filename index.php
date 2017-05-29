@@ -10,6 +10,6 @@
     //var_dump($fork_arr[0]);
     
     foreach($fork_arr as $index => $fork) {
-        echo $fork->id . "<br>";
+        echo $fork->full_name . "<br>";
     }
 ?>
