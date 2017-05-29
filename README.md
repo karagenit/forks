@@ -1,6 +1,8 @@
 # Github Repository Forks
 Find Most Updated Forks of a Github Repository
 
+## Documentation
+
 ### API References
 
 [Forks](https://developer.github.com/v3/repos/forks/#forks)  
@@ -16,3 +18,7 @@ Find Most Updated Forks of a Github Repository
 - Forks
 - Last Update
 - Commits Above/Behind Parent
+
+## Notes
+
+`var_dump()` is your friend when debugging PHP...
