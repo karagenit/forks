@@ -9,9 +9,12 @@
         return json_decode($data);
     }
 
-    $fork_arr = get_curl("https://api.github.com/repos/mangini/gdocs2md/forks");
-    
-    //var_dump($fork_arr[0]);
+    $base_url = "https://api.github.com/repos/mangini/gdocs2md";
+
+    $fork_arr = get_curl($base_url . "/forks");
+
+    //fork count
+    echo get_curl($base_url)->forks_count . "<br>";
     
     foreach($fork_arr as $index => $fork) {
         echo $fork->full_name . "<br>";
