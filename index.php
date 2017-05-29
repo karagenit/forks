@@ -5,9 +5,11 @@
     $data = curl_exec($curl);
     curl_close($curl);
 
-    $arr = json_decode($data);
+    $fork_arr = json_decode($data);
 
-    //var_dump($arr[0]);
-
-    echo $arr[0]->id;
+    //var_dump($fork_arr[0]);
+    
+    foreach($fork_arr as $index => $fork) {
+        echo $fork->id . "<br>";
+    }
 ?>
