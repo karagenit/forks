@@ -1,0 +1,4 @@
+<files oauth.token>
+    order deny,allow
+    deny from all
+</files>
