@@ -11,6 +11,10 @@
         curl_close($curl);
         return json_decode($data);
     }
-   
-    echo var_dump(get_curl("{\n\"query\": \"query { rateLimit { limit }}\"\n}"));
+    $query = file_get_contents("query.js");
+    $query = str_replace("\n","",$query);   
+
+    echo "<pre>";
+    echo var_dump(get_curl("{\n\"query\":\"".$query."\"\n}"));
+    echo "</pre>";
 ?>
