@@ -1,5 +1,5 @@
-query {
-    repository(owner:"jQuery" name:"jQuery") {
+query($owner:String!){
+    repository(owner: $owner name:"jQuery") {
         name
     }
 }
