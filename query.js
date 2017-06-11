@@ -1,5 +1,5 @@
 query {
-    rateLimit {
-        limit
+    repository(owner:"jQuery" name:"jQuery") {
+        name
     }
 }
