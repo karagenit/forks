@@ -4,6 +4,9 @@ Find Most Updated Forks of a Github Repository
 
 ## Documentation
 
+> **Protip**  
+> When creating the JSON object for the GraphQL query, you have to have each of the initial {} on a new line!
+
 ### API References
 
 [Forks](https://developer.github.com/v3/repos/forks/#forks)  
