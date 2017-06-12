@@ -1,6 +1,6 @@
 query($owner:String! $name:String!){
     repository(owner: $owner name: $name) {
-        forks(first:100 orderBy:{field:PUSHED_AT, direction:DESC}) {
+        forks(first:5 orderBy:{field:PUSHED_AT, direction:DESC}) {
             edges {
                 node {
                     nameWithOwner
