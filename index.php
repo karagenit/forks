@@ -13,10 +13,8 @@
     }
     $query = file_get_contents("query.js");
     $query = str_replace("\n","",$query);   
-    //$query = str_replace(" ","",$query); //screws up non-quoted value insertion
     $query = str_replace("\"","\\\"",$query);
-    //$query = str_replace("\$","\\\$",$query);
-    $vars = "\"variables\": {\"owner\":\"jQuery\"}";
+    $vars = '"variables": {"owner":"jQuery"}';
     $json = "{\n\"query\":\"".$query."\",".$vars."\n}";
 
     echo "<pre>";
