@@ -11,14 +11,32 @@
         curl_close($curl);
         return json_decode($data);
     }
-    $query = file_get_contents("query.js");
-    $query = str_replace("\n","",$query);   
-    $query = str_replace("\"","\\\"",$query);
-    $vars = '"variables": {"owner":"jQuery"}';
-    $json = "{\n\"query\":\"".$query."\",".$vars."\n}";
+
+    function str_prep($str) {
+        $str = str_replace("\n","",$str);   
+        $str = str_replace("\"","\\\"",$str);
+        return $str;
+    }   
+
+    function build_curl($query, $vars="") {
+        $query = str_prep($query);
+        $vars = str_replace("\n","",$vars); //gen-u-ine cancer, DONT ESCAPE THE QUOTES
+
+        $json = "{\n";
+        $json = $json.'"query":"'.$query.'"';
+
+        if(strlen($vars) != 0) {
+            $json = $json.',"variables":{'.$vars.'}';
+        }
+
+        $json = $json."\n}";    
+        return $json;
+    }
+
+    $json = build_curl(file_get_contents("query.js"), '"owner":"jQuery"');
 
     echo "<pre>";
-    echo $query."\n";
+    //echo $query."\n";
     echo $json."\n";
     echo var_dump(get_curl($json));
     echo "</pre>";
