@@ -1,1 +1,2 @@
-"owner":"jQuery"
+"owner":"jQuery",
+"name":"jQuery"
