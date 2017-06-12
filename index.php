@@ -34,10 +34,13 @@
     }
 
     $json = build_curl(file_get_contents("query.js"), file_get_contents("variables.js"));
+    $forks = get_curl($json);
 
     echo "<pre>";
-    //echo $query."\n";
-    echo $json."\n";
-    echo var_dump(get_curl($json));
+    //echo $json."\n";
+    //echo var_dump(get_curl($json));
+    foreach($forks->data->repository->forks->edges as $fork) {
+        echo $fork->node->nameWithOwner."\n";
+    }
     echo "</pre>";
 ?>
