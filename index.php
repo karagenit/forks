@@ -9,7 +9,7 @@
         curl_setopt($curl, CURLOPT_USERAGENT, "RandomAgent");
         $data = curl_exec($curl);
         curl_close($curl);
-        return json_decode($data);
+        return $data;
     }
 
     function str_prep($str) {
@@ -34,7 +34,7 @@
     }
 
     $json = build_curl(file_get_contents("query.js"), file_get_contents("variables.js"));
-    $forks = get_curl($json);
+    $forks = json_decode(get_curl($json));
     $sorted_forks = array();
 
     echo "<pre>";
