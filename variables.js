@@ -1,2 +1,4 @@
-"owner":"jQuery",
-"name":"jQuery"
+{
+    "owner":"jQuery",
+    "name":"jQuery"
+}

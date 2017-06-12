@@ -26,7 +26,7 @@
         $json = $json.'"query":"'.$query.'"';
 
         if(strlen($vars) != 0) {
-            $json = $json.',"variables":{'.$vars.'}';
+            $json = $json.',"variables":'.$vars;
         }
 
         $json = $json."\n}";    
