@@ -33,7 +33,7 @@
         return $json;
     }
 
-    $json = build_curl(file_get_contents("query.js"), '"owner":"jQuery"');
+    $json = build_curl(file_get_contents("query.js"), file_get_contents("variables.js"));
 
     echo "<pre>";
     //echo $query."\n";
