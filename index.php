@@ -35,12 +35,16 @@
 
     $json = build_curl(file_get_contents("query.js"), file_get_contents("variables.js"));
     $forks = get_curl($json);
+    $sorted_forks = array();
 
     echo "<pre>";
     //echo $json."\n";
     //echo var_dump(get_curl($json));
     foreach($forks->data->repository->forks->edges as $fork) {
-        echo $fork->node->nameWithOwner."\n";
+        $sorted_forks[$fork->node->nameWithOwner] = $fork->node->watchers->totalCount;
+    }
+    foreach($sorted_forks as $fork=>$watchers) {
+        echo $fork."\t".$watchers."\n";
     }
     echo "</pre>";
 ?>
