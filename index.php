@@ -43,6 +43,7 @@
     foreach($forks->data->repository->forks->edges as $fork) {
         $sorted_forks[$fork->node->nameWithOwner] = $fork->node->watchers->totalCount;
     }
+    asort($sorted_forks);
     foreach($sorted_forks as $fork=>$watchers) {
         echo $fork."\t".$watchers."\n";
     }
