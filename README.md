@@ -23,61 +23,6 @@ Find Most Updated Forks of a Github Repository
 - Last Update
 - Commits Above/Behind Parent
 
-### GraphQL Query
-
-```
-query {
-  repository(owner:"jQuery", name:"jQuery") {
-    forks(first:100 orderBy:{field:PUSHED_AT, direction:DESC}) {
-      edges {
-        node {
-          nameWithOwner
-          pushedAt
-          watchers {
-            totalCount
-          }
-          diskUsage
-          forks {
-            totalCount
-          }
-          issues {
-            totalCount
-          }
-          mentionableUsers {
-            totalCount
-          }
-          commitComments {
-            totalCount
-          }
-          milestones {
-            totalCount
-          }
-          projects {
-            totalCount
-          }
-          pullRequests {
-            totalCount
-          }
-          releases {
-            totalCount
-          }
-          stargazers {
-            totalCount
-          }
-        }
-        cursor
-      }
-    }
-  }
-  rateLimit {
-    limit
-    cost
-    remaining
-    resetAt
-  }
-}
-```
-
 With certain cursors put in the `after` tag, it returns an error. I think maybe it times out searching through the list of forks.
 
 ### Available Analytics Fields
@@ -112,3 +57,18 @@ Others that might be useable:
 ### OAuth
 
 We need to set up our app as an OAuth app to be able to access the GraphQL API from the command line. We might also consider having clients register our app, so that requests count against their 5000 limit and not ours. 
+
+## Site Layout
+
+Index Page: Describes app, link to github's oauth authorization page.
+Auth Page: Saves user token, sets up PHP session with user
+Query Page: Takes user input, passes to result page
+Result Page: Performs query based on user's token, displays results
+
+We could also combine the Query/Result pages (e.g. by checking if the POST header has data - if so, run query) so the user doesn't have to click back to run a new query.
+
+### AJAX
+
+I think it would be neat to eventually set it up for AJAX (site layout would be mostly the same, we'd probably still use sessions [and have the AJAX pass a session token back with the new query or whatever] and the Query page would be JS). I think the PHP would simply perform the query and hand the JSON object from github to the client. This would make the "load more" feature much easier, as the client would handle the sorting & calculations - otherwise, to "load more", the client would have to send it's current data set back to the server so the server can sort all of them. (Load more will still have to tell it what `cursor` to start the query at). 
+
+Oh, oh, we could even do the query client side! That's a little ways off...
