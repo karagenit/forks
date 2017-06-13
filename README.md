@@ -60,10 +60,10 @@ We need to set up our app as an OAuth app to be able to access the GraphQL API f
 
 ## Site Layout
 
-Index Page: Describes app, link to github's oauth authorization page.
-Auth Page: Saves user token, sets up PHP session with user
-Query Page: Takes user input, passes to result page
-Result Page: Performs query based on user's token, displays results
+Index Page: Describes app, link to github's oauth authorization page.  
+Auth Page: Saves user token, sets up PHP session with user  
+Query Page: Takes user input, passes to result page  
+Result Page: Performs query based on user's token, displays results  
 
 We could also combine the Query/Result pages (e.g. by checking if the POST header has data - if so, run query) so the user doesn't have to click back to run a new query.
 
