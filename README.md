@@ -5,7 +5,7 @@ Find Most Updated Forks of a Github Repository
 **Roadmap**  
 
 - [x] Better Sorting
-- [ ] OAuth Login & Sessions
+- [x] OAuth Login & Sessions
 - [ ] AJAX Requests (Sorting Server Side)
 - [ ] Client Side Sorting
 - [ ] Load More Feature
