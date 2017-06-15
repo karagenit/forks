@@ -1,5 +1,5 @@
 <?php
-    function get_curl($json) {
+    function get_curl($token, $json) {
         $curl = curl_init("https://api.github.com/graphql");
         curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($curl, CURLOPT_POSTFIELDS, $json);

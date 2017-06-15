@@ -1,10 +1,11 @@
 <?php
 
+    session_start();
     require 'curl_graphql_lib.php';
 
     $vars = json_encode(array("owner"=>$_POST['owner'], "name"=>$_POST['name']));
     $json = build_curl(file_get_contents("query.js"), $vars);
-    $forks = json_decode(get_curl($json));
+    $forks = json_decode(get_curl($_SESSION['token'], $json));
     $sorted_forks = array();
 
     echo "<pre>";
