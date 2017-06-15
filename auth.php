@@ -4,6 +4,12 @@
     $client_id = file_get_contents("client_id.token");
     $client_secret = file_get_contents("client_secret.token");
     $code = $_GET['code'];
+
+    if($code == "") {
+        header("Location: https://github.com/login/oauth/authorize?client_id=$client_id");
+        exit();
+    }
+    
     $args = array("client_id"=>$client_id, "client_secret"=>$client_secret, "code"=>$code);
 
     $curl = curl_init("https://github.com/login/oauth/access_token");
