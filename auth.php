@@ -17,4 +17,7 @@
     if($token != NULL) { //if the user refreshes auth.php, TOKEN = NULL, but we don't want to overwrite
         $_SESSION['token'] = $token;
     }
+
+    header("Location: http://caleb.techhounds.com/forks/query.php");
+    exit();
 ?>
