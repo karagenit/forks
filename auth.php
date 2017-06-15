@@ -8,6 +8,9 @@
     curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($curl, CURLOPT_POSTFIELDS, $args);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array("Accept: application/json"));
 
-    var_dump(curl_exec($curl));
+    $curl_data = json_decode(curl_exec($curl));
+    $token = $curl_data->access_token;
+    echo "Token is: $token <br>";
 ?>
