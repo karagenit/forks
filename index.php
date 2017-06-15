@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $client_id = file_get_contents("client_id.token");
 ?>
 

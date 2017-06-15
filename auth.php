@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     $client_id = file_get_contents("client_id.token");
     $client_secret = file_get_contents("client_secret.token");
     $code = $_GET['code'];
@@ -12,5 +14,7 @@
 
     $curl_data = json_decode(curl_exec($curl));
     $token = $curl_data->access_token;
-    echo "Token is: $token <br>";
+    if($token != NULL) { //if the user refreshes auth.php, TOKEN = NULL, but we don't want to overwrite
+        $_SESSION['token'] = $token;
+    }
 ?>
