@@ -46,6 +46,7 @@
 
   <body>
     <div class="container">
+      <h1 class="text-center">Lookup Results</h1>
       <div class="col-md-3"></div>
       <div class="col-md-6">
         <table class="table table-striped">
@@ -59,7 +60,7 @@
 <?php
     foreach($sorted_forks as $fork=>$points) {
         echo "<tr>";
-        echo "<th>$fork</th>";
+        echo "<th><a href=\"https://github.com/$fork\">$fork</a></th>";
         echo "<th>$points</th>";
         echo "</tr>";
     }
