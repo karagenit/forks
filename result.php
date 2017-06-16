@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    require 'curl_graphql_lib.php';
+    require 'lib/curl-graphql.php';
 
     $token = $_SESSION['token'];
     if($token == "") {
