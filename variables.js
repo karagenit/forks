@@ -1,4 +1,0 @@
-{
-    "owner":"jQuery",
-    "name":"jQuery"
-}
