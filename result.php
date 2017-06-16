@@ -9,7 +9,7 @@
         exit();
     }
 
-    $vars = json_encode(array("owner"=>$_POST['owner'], "name"=>$_POST['name']));
+    $vars = json_encode(array("owner"=>$_GET['owner'], "name"=>$_GET['name']));
     $json = build_curl(file_get_contents("query.js"), $vars);
     $forks = json_decode(get_curl($token, $json));
     $sorted_forks = array();
