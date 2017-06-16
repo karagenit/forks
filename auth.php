@@ -24,6 +24,6 @@
         $_SESSION['token'] = $token;
     }
 
-    header("Location: http://caleb.techhounds.com/forks/query.php");
+    header("Location: http://caleb.techhounds.com/forks/query.html");
     exit();
 ?>
