@@ -66,15 +66,14 @@
 ?>
           </tbody>
         </table>
+<?php
+    foreach($forks->errors as $error) {
+        echo "<div class=\"alert alert-danger\" role=\"alert\">";
+        echo $error->message;
+        echo "</div>";  
+    }
+?>
       </div>
     </div>
   </body>
 </html>
-
-
-<?php
-    
-    foreach($forks->errors as $error) {
-        echo $error->message;
-    }
-?>
