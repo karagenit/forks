@@ -2,16 +2,18 @@
 
 Find Most Updated Forks of a Github Repository
 
-**Roadmap**  
+**Standard Roadmap**  
 
 - [x] Better Sorting
 - [x] OAuth Login & Sessions
+- [ ] Bootstrap
+- [ ] Error Page/About Page
+
+**AJAX Roadmap**
+
 - [ ] AJAX Requests (Sorting Server Side)
 - [ ] Client Side Sorting
 - [ ] Load More Feature
-- [ ] Bootstrap
-- [ ] Error Page
-- [ ] Client Side Queries
 
 ## Site Layout
 
