@@ -1,14 +1,32 @@
 <!DOCTYPE html>
-<html>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Find the most popular forks of a repository!">
+    <meta name="author" content="Caleb Smith">
 
-<form action="result.php">
-Owner:<br>
-<input type="text" name="owner"><br>
-Name:<br>
-<input type="text" name="name"><br>
-<input type="submit" value="Lookup">
-</form>
+    <title>Gitub Fork Finder</title>
 
-</body>
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="text-center">
+        <h1>Repository Lookup</h1>
+        <div class="row">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-6">
+            <form action="result.php">
+              <input type="text" class="form-control" placeholder="Owner" name="owner"><br>
+              <input type="text" class="form-control" placeholder="Name" name="name"><br>
+              <input type="submit" class="btn btn-success" value="Lookup">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
