@@ -3,9 +3,15 @@
     session_start();
     require 'curl_graphql_lib.php';
 
+    $token = $_SESSION['token'];
+    if($token == "") {
+        header("Location: http://caleb.techhounds.com/forks/auth.php");
+        exit();
+    }
+
     $vars = json_encode(array("owner"=>$_POST['owner'], "name"=>$_POST['name']));
     $json = build_curl(file_get_contents("query.js"), $vars);
-    $forks = json_decode(get_curl($_SESSION['token'], $json));
+    $forks = json_decode(get_curl($token, $json));
     $sorted_forks = array();
 
     echo "<pre>";
