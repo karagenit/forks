@@ -9,7 +9,14 @@
         exit();
     }
 
-    $vars = json_encode(array("owner"=>$_GET['owner'], "name"=>$_GET['name']));
+    $owner = $_GET['owner'];
+    $name = $_GET['name'];
+    if($owner == "" || $name == "") {
+        header("Location: http://caleb.techhounds.com/forks/query.html");
+        exit();
+    }
+
+    $vars = json_encode(array("owner"=>$owner, "name"=>$name));
     $json = build_curl(file_get_contents("query.js"), $vars);
     $forks = json_decode(get_curl($token, $json));
     $sorted_forks = array();
