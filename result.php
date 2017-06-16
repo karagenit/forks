@@ -67,11 +67,13 @@
           </tbody>
         </table>
 <?php
+    echo "<div style=\"position:fixed;bottom:0;\">";
     foreach($forks->errors as $error) {
-        echo "<div class=\"alert alert-danger\" role=\"alert\">";
+        echo "<div class=\"alert alert-danger\" style=\"margin:5px;\" role=\"alert\">";
         echo $error->message;
         echo "</div>";  
     }
+    echo "</div>";
 ?>
       </div>
     </div>

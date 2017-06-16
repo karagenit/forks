@@ -1,4 +1,4 @@
-query($owner:String! $name:String!){
+query($owner:String! $name:String! $test:String! $tester:String!){
     repository(owner: $owner name: $name) {
         forks(first:5 orderBy:{field:PUSHED_AT, direction:DESC}) {
             edges {
