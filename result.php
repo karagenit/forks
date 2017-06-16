@@ -15,18 +15,23 @@
     $sorted_forks = array();
 
     echo "<pre>";
-    //echo $json."\n";
-    //echo var_dump(get_curl($json));
-    //echo var_dump($_POST);
+    
+    foreach($forks->errors as $error) {
+        echo $error->message;
+    }
+    
     foreach($forks->data->repository->forks->edges as $fork) {
         $sorted_forks[$fork->node->nameWithOwner] = $fork->node->watchers->totalCount;
         $sorted_forks[$fork->node->nameWithOwner] += $fork->node->stargazers->totalCount;
         $sorted_forks[$fork->node->nameWithOwner] += $fork->node->mentionableUsers->totalCount;
         $sorted_forks[$fork->node->nameWithOwner] += $fork->node->issues->totalCount;
     }
+    
     arsort($sorted_forks);
+    
     foreach($sorted_forks as $fork=>$points) {
         echo $fork."\t".$points."\n";
     }
+    
     echo "</pre>";
 ?>
