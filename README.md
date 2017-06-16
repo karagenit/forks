@@ -15,6 +15,10 @@ Find Most Updated Forks of a Github Repository
 - [ ] Client Side Sorting
 - [ ] Load More Feature
 
+## Setup & Install
+
+Requires `bootstrap v3.3.7` extracted in the `bootstrap/` directory. Requires files `client_id.token` and `client_secret.token` located in the root project directory - you are given these keys when you register a Github OAuth app. 
+
 ## Site Layout
 
 Index Page: Describes app, link to github's oauth authorization page.  
