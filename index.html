@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="margin:0;padding:0;height:100%;">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,34 +12,45 @@
     <link href="./bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
   </head>
 
-  <body>
-    <!-- Header -->
-    <div class="navbar navbar-default navbar-static-top navbar-inverse" style="margin-bottom:0px;">
-     <div class="container-fluid" style="max-width:500px;">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="http://caleb.techhounds.com/forks">Github Fork Finder</a>
-        </div>   
-      </div>    
-    </div>
+  <body style="margin:0;padding:0;height:100%">
 
-    <!-- Body Content -->
-    <div class="container" style="max-width:500px;">
-      <div class="text-center">
-        <h1>Github Forks Finder</h1>
-        <div class="row">          
-          <div>
-            <div class="well" style="margin:10px;">
-              <p>This utility allows you to lookup all of the Forks of a Github Repository and sort them by popularity. It uses's Github's v4 GraphQL API & the OAuth Application Webflow, which means you'll have to give the site permission to lookup Repositories on your behalf.</p>
-              <a href="auth.php" class="btn btn-success btn-lg">Authorize via Github</a>
+    <div style="min-height:100%;position:relative;">
+
+      <!-- Header -->
+      <div class="navbar navbar-default navbar-static-top navbar-inverse" style="margin-bottom:0px;">
+        <div class="container-fluid" style="max-width:500px;">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="http://caleb.techhounds.com/forks">Github Fork Finder</a>
+          </div>   
+        </div>    
+      </div>
+
+      <!-- Body Content -->
+      <div class="container" style="max-width:500px;padding-bottom:50px;">
+        <div class="text-center">
+          <h1>Github Forks Finder</h1>
+          <div class="row">          
+            <div>
+              <div class="well" style="margin:10px;">
+                <p>This utility allows you to lookup all of the Forks of a Github Repository and sort them by popularity. It uses's Github's v4 GraphQL API & the OAuth Application Webflow, which means you'll have to give the site permission to lookup Repositories on your behalf.</p>
+                <a href="auth.php" class="btn btn-success btn-lg">Authorize via Github</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Footer -->
-    <div class="text-center">
-      Footer
+      <!-- Footer -->
+      <div style="position:absolute;bottom:0;height:50px;width:100%;">
+        <div class="text-center">
+          <p>
+            &copy; Caleb Smith, 2017 
+            &middot; <a href="https://github.com/karagenit/forks">View Source</a>
+            &middot; <a href="http://caleb.techhounds.com/forks/settings.php">Change Settings</a>
+          </p>
+        </div>
+      </div>
+
     </div>
   </body>
 </html>
