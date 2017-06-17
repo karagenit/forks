@@ -1,8 +1,11 @@
 <?php
     class Fork {
+     
         public $data = 0;
         public $points = 0;
+     
         function __construct($node) {
+     
             $this->data = $node;
             $this->points += $node->watchers->totalCount;
             $this->points += $node->stargazers->totalCount;
@@ -21,12 +24,14 @@
             session_start();
             require 'lib/curl-graphql.php';
 
+            //check for OAuth token
             $token = $_SESSION['token'];
             if($token == "") {
                 header("Location: http://caleb.techhounds.com/forks/auth.php");
                 exit();
             }
 
+            //check for User/Name GET data
             $owner = $_GET['owner'];
             $name = $_GET['name'];
             if($owner == "" || $name == "") {
@@ -34,23 +39,26 @@
                 exit();
             }
 
+            //using library, get curl data from github
             $vars = json_encode(array("owner"=>$owner, "name"=>$name));
             $json = build_curl(file_get_contents("graphql-query.js"), $vars);
-            $forks = json_decode(get_curl($token, $json));
-            $sorted_forks = array();
+            $curlresult = json_decode(get_curl($token, $json));
+            $forks = array();
 
-            foreach($forks->data->repository->forks->edges as $edge) {
+            //create array of sortable Fork classes
+            foreach($curlresult->data->repository->forks->edges as $edge) {
                 $fork = new Fork($edge->node);
-                $sorted_forks[$fork->data->nameWithOwner] = $fork; 
+                $forks[$fork->data->nameWithOwner] = $fork; 
             }
-            
-            uasort($sorted_forks, function($a, $b)
-            {
+
+            //sort array of Fork classes
+            uasort($forks, function($a, $b) {
                 return $a->points < $b->points;
             });
 
-            $this->forks = $sorted_forks;
-            $this->errors = $forks->errors;
+            //set fields to be accessible
+            $this->forks = $forks;
+            $this->errors = $curlresult->errors;
         }
     }
 ?>
