@@ -1,4 +1,16 @@
 <?php
+    class Fork {
+        public $data = 0;
+        public $points = 0;
+        function __construct($node) {
+            $this->data = $node;
+            $this->points += $node->watchers->totalCount;
+            $this->points += $node->stargazers->totalCount;
+            $this->points += $node->mentionableUsers->totalCount;
+            $this->points += $node->issues->totalCount;
+        }
+    }
+
     session_start();
     require 'lib/curl-graphql.php';
 
@@ -20,14 +32,15 @@
     $forks = json_decode(get_curl($token, $json));
     $sorted_forks = array();
 
-    foreach($forks->data->repository->forks->edges as $fork) {
-        $sorted_forks[$fork->node->nameWithOwner] = $fork->node->watchers->totalCount;
-        $sorted_forks[$fork->node->nameWithOwner] += $fork->node->stargazers->totalCount;
-        $sorted_forks[$fork->node->nameWithOwner] += $fork->node->mentionableUsers->totalCount;
-        $sorted_forks[$fork->node->nameWithOwner] += $fork->node->issues->totalCount;
+    foreach($forks->data->repository->forks->edges as $edge) {
+        $fork = new Fork($edge->node);
+        $sorted_forks[$fork->data->nameWithOwner] = $fork; 
     }
     
-    arsort($sorted_forks);
+    uasort($sorted_forks, function($a, $b)
+    {
+        return $a->points < $b->points;
+    });
 ?>
 
 <!DOCTYPE html>
@@ -58,10 +71,10 @@
           </thead>
           <tbody>
 <?php
-    foreach($sorted_forks as $fork=>$points) {
+    foreach($sorted_forks as $name=>$fork) {
         echo "<tr>";
-        echo "<th><a href=\"https://github.com/$fork\">$fork</a></th>";
-        echo "<th>$points</th>";
+        echo "<th><a href=\"https://github.com/$name\">$name</a></th>";
+        echo "<th>$fork->points</th>";
         echo "</tr>";
     }
 ?>
