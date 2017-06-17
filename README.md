@@ -6,8 +6,8 @@ Find Most Updated Forks of a Github Repository
 
 - [x] Better Sorting
 - [x] OAuth Login & Sessions
-- [ ] Bootstrap
-- [ ] Error Page/About Page
+- [x] Bootstrap
+- [x] Error Page/About Page
 
 **AJAX Roadmap**
 
@@ -70,23 +70,19 @@ Either oldest created or most recently pushed. Can also do most recently "update
 
 This is how we determine which is the "most popular" repo. Current methods the API exposes:
 
-* Watchers
-* Disk Usage: could compare to parent, see how much code has been added
-* Forks: if this fork has been forked, it must have made useful changes
-* Issues: if this fork has many open issues, it might be popular
-* Mentionable Users: if this fork has many mentionable users, it probably has many contributors
-* Commit Comments: if this fork has many commit comments, it's probably popular
-* Milestones
-* Projects
-* PRs
-* Releases
-* Stargazers (stars)
+- [x] Watchers
+- [ ] Disk Usage: could compare to parent, see how much code has been added
+- [ ] Forks: if this fork has been forked, it must have made useful changes
+- [x] Issues: if this fork has many open issues, it might be popular
+- [x] Mentionable Users: if this fork has many mentionable users, it probably has many contributors
+- [ ] Commit Comments: if this fork has many commit comments, it's probably popular
+- [ ] Milestones
+- [ ] Projects
+- [ ] PRs
+- [ ] Releases
+- [x] Stargazers (stars)
 
-Others that might be useable:
+Others that might be usable:
 
 * defaultBranchRef
 * refs
-
-### OAuth
-
-We need to set up our app as an OAuth app to be able to access the GraphQL API from the command line. We might also consider having clients register our app, so that requests count against their 5000 limit and not ours. 
