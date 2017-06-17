@@ -11,8 +11,14 @@
         }
     }
 
+    function gett() {
+        return round(microtime(true) * 1000);
+    }
+
     session_start();
     require 'lib/curl-graphql.php';
+
+    $t_start = gett();
 
     $token = $_SESSION['token'];
     if($token == "") {
@@ -29,18 +35,25 @@
 
     $vars = json_encode(array("owner"=>$owner, "name"=>$name));
     $json = build_curl(file_get_contents("query.js"), $vars);
+    echo "To build: ".(gett() - $t_start);
     $forks = json_decode(get_curl($token, $json));
     $sorted_forks = array();
+
+    echo "To cURL: ".(gett() - $t_start);
 
     foreach($forks->data->repository->forks->edges as $edge) {
         $fork = new Fork($edge->node);
         $sorted_forks[$fork->data->nameWithOwner] = $fork; 
     }
+
+    echo "To List: ".(gett() - $t_start);
     
     uasort($sorted_forks, function($a, $b)
     {
         return $a->points < $b->points;
     });
+
+    echo "To Sort: ".(gett() - $t_start);
 ?>
 
 <!DOCTYPE html>
