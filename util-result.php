@@ -11,39 +11,46 @@
         }
     }
 
-    function getForks() {
+    class ForkFinder {
         
-        session_start();
-        require 'lib/curl-graphql.php';
-
-        $token = $_SESSION['token'];
-        if($token == "") {
-            header("Location: http://caleb.techhounds.com/forks/auth.php");
-            exit();
-        }
-
-        $owner = $_GET['owner'];
-        $name = $_GET['name'];
-        if($owner == "" || $name == "") {
-            header("Location: http://caleb.techhounds.com/forks/query.html");
-            exit();
-        }
-
-        $vars = json_encode(array("owner"=>$owner, "name"=>$name));
-        $json = build_curl(file_get_contents("query.js"), $vars);
-        $forks = json_decode(get_curl($token, $json));
-        $sorted_forks = array();
-
-        foreach($forks->data->repository->forks->edges as $edge) {
-            $fork = new Fork($edge->node);
-            $sorted_forks[$fork->data->nameWithOwner] = $fork; 
-        }
+        public $forks = 0;
+        public $errors = 0;
         
-        uasort($sorted_forks, function($a, $b)
-        {
-            return $a->points < $b->points;
-        });
+        function __construct() {
+            
+            session_start();
+            require 'lib/curl-graphql.php';
 
-        return $sorted_forks;
+            $token = $_SESSION['token'];
+            if($token == "") {
+                header("Location: http://caleb.techhounds.com/forks/auth.php");
+                exit();
+            }
+
+            $owner = $_GET['owner'];
+            $name = $_GET['name'];
+            if($owner == "" || $name == "") {
+                header("Location: http://caleb.techhounds.com/forks/query.html");
+                exit();
+            }
+
+            $vars = json_encode(array("owner"=>$owner, "name"=>$name));
+            $json = build_curl(file_get_contents("query.js"), $vars);
+            $forks = json_decode(get_curl($token, $json));
+            $sorted_forks = array();
+
+            foreach($forks->data->repository->forks->edges as $edge) {
+                $fork = new Fork($edge->node);
+                $sorted_forks[$fork->data->nameWithOwner] = $fork; 
+            }
+            
+            uasort($sorted_forks, function($a, $b)
+            {
+                return $a->points < $b->points;
+            });
+
+            $this->forks = $sorted_forks;
+            $this->errors = $forks->errors;
+        }
     }
 ?>

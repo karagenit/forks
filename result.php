@@ -1,6 +1,8 @@
 <?php
     require 'util-result.php';
-    $sorted_forks = getForks();
+    $finder = new ForkFinder();
+    $sorted_forks = $finder->forks;
+    $errors = $finder->errors;
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +50,7 @@
           </tbody>
         </table>
 <?php
-    foreach($forks->errors as $error) {
+    foreach($errors as $error) {
         echo "<div class=\"alert alert-danger\" role=\"alert\">";
         echo $error->message;
         echo "</div>";  
