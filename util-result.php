@@ -35,7 +35,7 @@
             }
 
             $vars = json_encode(array("owner"=>$owner, "name"=>$name));
-            $json = build_curl(file_get_contents("query.js"), $vars);
+            $json = build_curl(file_get_contents("graphql-query.js"), $vars);
             $forks = json_decode(get_curl($token, $json));
             $sorted_forks = array();
 
