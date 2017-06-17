@@ -13,18 +13,16 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container" style="max-width:500px;">
       <div class="text-center">
         <h1>Github Forks Finder</h1>
-        <div class="row">
-          <div class="col-sm-3"></div>
-          <div class="col-sm-6">
-            <div class="well">
+        <div class="row">          
+          <div>
+            <div class="well" style="margin:10px;">
               <p>This utility allows you to lookup all of the Forks of a Github Repository and sort them by popularity. It uses's Github's v4 GraphQL API & the OAuth Application Webflow, which means you'll have to give the site permission to lookup Repositories on your behalf.</p>
               <a href="auth.php" class="btn btn-success btn-lg">Authorize via Github</a>
             </div>
           </div>
-          <div class="col-sm-3"></div>
         </div>
       </div>
     </div>
