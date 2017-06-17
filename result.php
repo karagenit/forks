@@ -52,7 +52,7 @@
 <?php
     foreach($errors as $error) {
         echo "<div class=\"alert alert-danger\" role=\"alert\">";
-        echo $error->message;
+        echo $error->message." <a href=\"https://github.com/karagenit/forks/issues/new\">[report]</a>";
         echo "</div>";  
     }
 ?>
