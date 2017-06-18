@@ -2,18 +2,26 @@
 
 Find Most Updated Forks of a Github Repository
 
-**Standard Roadmap**  
+**Roadmap of Planned Features**  
 
 - [x] Better Sorting
 - [x] OAuth Login & Sessions
 - [x] Bootstrap
-- [x] Error Page/About Page
+- [x] Error Messages
+- [ ] User Settings [#18] \[#36]
+- [ ] General Cleanup [#42] \[#39]
+- [ ] Redesign Query Page [#26] \[#43] [#44]
+- [ ] Redesign Results Page [#28] \[#33]
+- [ ] Webflow Redesign [#23] \[#25] \[#44]
+- [ ] Improve Search [#17] \[#37]
+- [ ] AJAX Requests (Sorting Server Side) [#13]
+- [ ] Client Side Sorting [#16]
+- [ ] Load More Feature [#11]
+- [ ] Client Side Queries [#14]
+- [ ] Improve Error Reporting [#41]
 
-**AJAX Roadmap**
 
-- [ ] AJAX Requests (Sorting Server Side)
-- [ ] Client Side Sorting
-- [ ] Load More Feature
+**Future Ideas**
 
 ## Setup & Install
 
