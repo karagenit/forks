@@ -40,7 +40,7 @@
             }
 
             //using library, get curl data from github
-            $vars = json_encode(array("owner"=>$owner, "name"=>$name));
+            $vars = array("owner"=>$owner, "name"=>$name);
             $json = build_curl(file_get_contents("graphql-query.js"), $vars);
             $curlresult = json_decode(get_curl($token, $json));
             $forks = array();
