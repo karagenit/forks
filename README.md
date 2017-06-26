@@ -45,9 +45,6 @@ Oh, oh, we could even do the query client side! That's a little ways off...
 
 ## Documentation
 
-> **Protip**  
-> When creating the JSON object for the GraphQL query, you have to have each of the initial {} on a new line!
-
 ### API References
 
 [Forks](https://developer.github.com/v3/repos/forks/#forks)  
