@@ -7,8 +7,9 @@
         function __construct($node) {
      
             $this->data = $node;
-            $this->points += $node->watchers->totalCount;
-            $this->points += $node->stargazers->totalCount;
+            $this->points += $node->watchers->totalCount * 2;
+            $this->points += $node->stargazers->totalCount * 2;
+            $this->points += $node->forks->totalCount * 2;
             $this->points += $node->mentionableUsers->totalCount;
             $this->points += $node->issues->totalCount;
         }
