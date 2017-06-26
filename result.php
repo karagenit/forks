@@ -11,8 +11,8 @@
             //echo "<th>$fork->points</th>";
             echo "<th>".$fork->data->stargazers->totalCount."</th>";
             echo "<th>".$fork->data->watchers->totalCount."</th>";
-            echo "<th>".$fork->data->mentionableUsers->totalCount."</th>";
             echo "<th>".$fork->data->issues->totalCount."</th>";
+            echo "<th>".$fork->data->forks->totalCount."</th>";
             echo "</tr>";
         }
     }
@@ -66,8 +66,8 @@
               <th>Repo</th>
               <th><span class="glyphicon glyphicon-star"></span></th>
               <th><span class="glyphicon glyphicon-eye-open"></span></th>
-              <th><span class="glyphicon glyphicon-user"></span></th>
               <th><span class="glyphicon glyphicon-remove"></span></th>
+              <th><span class="glyphicon glyphicon-transfer"></span></th>
             </tr>
           </thead>
           <tbody>
