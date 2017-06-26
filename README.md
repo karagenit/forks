@@ -79,19 +79,19 @@ Either oldest created or most recently pushed. Can also do most recently "update
 
 This is how we determine which is the "most popular" repo. Current methods the API exposes:
 
+**Good**
 - [x] Watchers
-- [ ] Disk Usage: could compare to parent, see how much code has been added
 - [ ] Forks: if this fork has been forked, it must have made useful changes
 - [x] Issues: if this fork has many open issues, it might be popular
+- [ ] PRs
+- [ ] Ref: See if anything new has been committed, maybe even backtrace commit history to find +/- from parent
+- [x] Stargazers (stars)
+- [ ] Last Updated
+
+**Ehh**
 - [x] Mentionable Users: if this fork has many mentionable users, it probably has many contributors
 - [ ] Commit Comments: if this fork has many commit comments, it's probably popular
+- [ ] Disk Usage: could compare to parent, see how much code has been added
 - [ ] Milestones
 - [ ] Projects
-- [ ] PRs
 - [ ] Releases
-- [x] Stargazers (stars)
-
-Others that might be usable:
-
-* defaultBranchRef
-* refs
