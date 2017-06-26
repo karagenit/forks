@@ -13,7 +13,7 @@ Find Most Updated Forks of a Github Repository
 - [ ] Redesign Query Page [#26] \[#43] [#44]
 - [ ] Redesign Results Page [#28] \[#33]
 - [ ] Webflow Redesign [#23] \[#25] \[#44]
-- [ ] Improve Search [#17] \[#37]
+- [ ] Improve Search [#17] \[#37] \[#45]
 - [ ] AJAX Requests (Sorting Server Side) [#13]
 - [ ] Client Side Sorting [#16]
 - [ ] Load More Feature [#11]
