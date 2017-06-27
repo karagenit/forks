@@ -31,17 +31,43 @@
         <div class="text-center">
           <h1>Settings</h1>
           <form action="settings.php">
+            
             <div class="panel panel-default">
               <div class="panel-heading">
-                Query Settings
+                Recursion Depth
               </div>        
               <div class="panel-body">
-                <input type="range" class="form-control"> Recursion Depth
-                <input type="range" class="form-control"> Forks per Query
-                <input type="range" class="form-control"> Fork Value Threshold
-                <input type="range" class="form-control"> Commit History to Compare
+                <input type="range" class="form-control" name="recursion">
               </div>
             </div>
+            
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                Forks per Query
+              </div>
+              <div class="panel-body">
+                <input type="range" class="form-control" name="forks">
+              </div>
+            </div>
+            
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                Fork value Threshold
+              </div>
+              <div class="panel-body">
+                <input type="range" class="form-control" name="threshold">
+              </div>
+            </div>
+            
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                Commit History to Compare
+              </div>
+              <div class="panel-body">
+                <input type="range" class="form-control">
+              </div>
+            </div>
+            
             <input type="submit" class="btn btn-success" value="Save" style="width:100px">
           </form>
         </div>
