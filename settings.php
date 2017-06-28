@@ -90,7 +90,7 @@
               </div>
             </div>
             
-            <input type="submit" class="btn btn-success" value="Save" style="width:100px">
+            <input type="submit" class="btn btn-success" value="Save" style="width:100px; margin-bottom:20px;">
           </form>
         </div>
       </div>
