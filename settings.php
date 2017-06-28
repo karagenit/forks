@@ -1,3 +1,19 @@
+<?php
+    session_start();
+
+    if($_GET['recursion'] != NULL) {
+        $_SESSION['recursion'] = $_GET['recursion'];
+    }
+
+    if($_GET['forks'] != NULL) {
+        $_SESSION['forks'] = $_GET['forks'];
+    }
+
+    if($_GET['threshold'] != NULL) {
+        $_SESSION['threshold'] = $_GET['threshold'];
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en" style="margin:0;padding:0;height:100%;">
   <head>
