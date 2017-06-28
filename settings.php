@@ -12,6 +12,10 @@
     if($_GET['threshold'] != NULL) {
         $_SESSION['threshold'] = $_GET['threshold'];
     }
+
+    $recursion = $_SESSION['recursion'];
+    $forks = $_SESSION['forks'];
+    $threshold = $_SESSION['threshold'];
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +57,7 @@
                 Recursion Depth
               </div>        
               <div class="panel-body">
-                <input type="range" class="form-control" name="recursion">
+                <input type="range" value=<?php echo $recursion ?> class="form-control" name="recursion">
               </div>
             </div>
             
@@ -62,7 +66,7 @@
                 Forks per Query
               </div>
               <div class="panel-body">
-                <input type="range" class="form-control" name="forks">
+                <input type="range" value=<?php echo $forks ?> class="form-control" name="forks">
               </div>
             </div>
             
@@ -71,7 +75,7 @@
                 Fork value Threshold
               </div>
               <div class="panel-body">
-                <input type="range" class="form-control" name="threshold">
+                <input type="range" value=<?php echo $threshold ?> class="form-control" name="threshold">
               </div>
             </div>
             
