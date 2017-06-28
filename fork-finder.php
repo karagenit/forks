@@ -22,15 +22,8 @@
         
         function __construct() {
             
-            session_start();
+            require 'session.php';
             require 'lib/curl-graphql.php';
-
-            //check for OAuth token
-            $token = $_SESSION['token'];
-            if($token == "") {
-                header("Location: http://caleb.techhounds.com/forks/auth.php");
-                exit();
-            }
 
             //check for User/Name GET data
             $owner = $_GET['owner'];
@@ -41,7 +34,7 @@
             }
 
             //using library, get curl data from github
-            $vars = array("owner"=>$owner, "name"=>$name);
+            $vars = array("owner"=>$owner, "name"=>$name, "count"=>intval($forks));
             $json = build_curl(file_get_contents("graphql-query.js"), $vars);
             $curlresult = json_decode(get_curl($token, $json));
             $forks = array();
