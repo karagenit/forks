@@ -3,19 +3,25 @@
 
     if($_GET['recursion'] != NULL) {
         $_SESSION['recursion'] = $_GET['recursion'];
-    } else {
+    } 
+   
+    if($_SESSION['recursion'] == NULL) {
         $_SESSION['recursion'] = 0;
     }
 
     if($_GET['forks'] != NULL) {
         $_SESSION['forks'] = $_GET['forks'];
-    } else {
+    } 
+    
+    if($_SESSION['forks'] == NULL) {
         $_SESSION['forks'] = 20;
     }
 
     if($_GET['threshold'] != NULL) {
         $_SESSION['threshold'] = $_GET['threshold'];
-    } else {
+    }
+   
+    if($_SESSION['threshold'] == NULL) {
         $_SESSION['threshold'] = 3;
     }
 
