@@ -42,7 +42,7 @@
             //create array of sortable Fork classes
             foreach($curlresult->data->repository->forks->edges as $edge) {
                 $fork = new Fork($edge->node);
-                if($fork->points > 3) {
+                if($fork->points > $threshold) {
                     $forks[$fork->data->nameWithOwner] = $fork; 
                 }
             }
