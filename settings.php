@@ -57,7 +57,7 @@
                 Recursion Depth
               </div>        
               <div class="panel-body">
-                <input type="range" value=<?php echo $recursion ?> class="form-control" name="recursion">
+                <input type="range" value=<?php echo $recursion ?> min=0 max=3 class="form-control" name="recursion">
               </div>
             </div>
             
@@ -66,7 +66,7 @@
                 Forks per Query
               </div>
               <div class="panel-body">
-                <input type="range" value=<?php echo $forks ?> class="form-control" name="forks">
+                <input type="range" value=<?php echo $forks ?> min=1 max=100 class="form-control" name="forks">
               </div>
             </div>
             
@@ -75,7 +75,7 @@
                 Fork value Threshold
               </div>
               <div class="panel-body">
-                <input type="range" value=<?php echo $threshold ?> class="form-control" name="threshold">
+                <input type="range" value=<?php echo $threshold ?> min=0 max=20 class="form-control" name="threshold">
               </div>
             </div>
             
