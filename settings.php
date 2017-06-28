@@ -96,12 +96,12 @@
       </div>
 
       <!-- Footer -->
-      <div style="position:absolute;bottom:0;height:50px;width:100%;">
+      <div style="position:absolute;bottom:0;height:65px;width:100%;">
         <div class="text-center">
           <p>
-            &copy; Caleb Smith, 2017 
-            &middot; <a href="https://github.com/karagenit/forks">View Source</a>
-            &middot; <a href="http://caleb.techhounds.com/forks/settings.php">Change Settings</a>
+            &copy; Caleb Smith, 2017 <br>
+            <a href="https://github.com/karagenit/forks">About</a> &#9737;
+            <a href="http://caleb.techhounds.com/forks/settings.php">Settings</a>
           </p>
         </div>
       </div>
