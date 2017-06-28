@@ -31,6 +31,7 @@
 
     <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="./bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="slider.css" rel="stylesheet">
   </head>
 
   <body style="margin:0;padding:0;height:100%">
