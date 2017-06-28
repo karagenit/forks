@@ -2,15 +2,15 @@
     require 'session.php';
 
     if($_GET['recursion'] != NULL) {
-        $_SESSION['recursion'] = $_GET['recursion'];
+        $_SESSION['recursion'] = intval($_GET['recursion']);
     }
 
     if($_GET['forks'] != NULL) {
-        $_SESSION['forks'] = $_GET['forks'];
+        $_SESSION['forks'] = intval($_GET['forks']);
     }
 
     if($_GET['threshold'] != NULL) {
-        $_SESSION['threshold'] = $_GET['threshold'];
+        $_SESSION['threshold'] = intval($_GET['threshold']);
     }
 
     //hack to make sure slider positions are updated after save

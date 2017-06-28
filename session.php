@@ -13,9 +13,9 @@
         $_SESSION['threshold'] = 3;
     }
 
-    $recursion = $_SESSION['recursion'];
-    $forks = $_SESSION['forks'];
-    $threshold = $_SESSION['threshold'];
+    $recursion = intval($_SESSION['recursion']);
+    $forks = intval($_SESSION['forks']);
+    $threshold = intval($_SESSION['threshold']);
     $token = $_SESSION['token'];
 
     if($token == NULL) {
